@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11127318292"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11127318292');
+      gtag('config', 'AW-11127318292/vdBLCIPQ0f0aEJTO9bkp', { 'phone_conversion_number': '0800 878 3344' }); // Page view
+      gtag('config', 'AW-11127318292/nkuHCPbr4f0aEJTO9bkp'); // Form submission
+      
+      // Definição das funções de conversão globais
+      // Função para registrar visualização de página
+      window.trackPageView = function() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-11127318292/vdBLCIPQ0f0aEJTO9bkp'
+        });
+      };
+      
+      // Função para registrar envio de formulário
+      window.trackFormSubmission = function() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-11127318292/nkuHCPbr4f0aEJTO9bkp',
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+      };
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas Brisanet | Internet Fibra Óptica, Combos e Planos Empresariais</title>
+    <meta name="description" content="Ofertas exclusivas Brisanet: internet fibra óptica, Brisanet combos, Brisanet planos: planos residenciais e empresariais e atendimento especializado. Contrate online e aproveite a melhor conexão!" />
+    <meta name="author" content="Brisanet" />
+    <meta name="keywords" content="Brisanet, internet fibra óptica, planos de internet, combos, planos empresariais, ofertas, contratar internet, Ceará, Nordeste, banda larga, Wi-Fi grátis, instalação gratuita" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.brisanetoferta.com.br/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Ofertas Brisanet | Internet Fibra Óptica, Combos e Planos Empresariais" />
+    <meta property="og:description" content="Ofertas exclusivas Brisanet: internet fibra óptica, Brisanet combos, Brisanet planos: planos residenciais e empresariais e atendimento especializado. Contrate online e aproveite a melhor conexão!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.brisanetoferta.com.br/" />
+    <meta property="og:image" content="/assets/og-banner.jpg" />
+    <meta property="og:site_name" content="Ofertas Brisanet" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ofertas Brisanet | Internet Fibra Óptica, Combos e Planos Empresariais" />
+    <meta name="twitter:description" content="Ofertas exclusivas Brisanet: internet fibra óptica, Brisanet combos, Brisanet planos: planos residenciais e empresariais e atendimento especializado. Contrate online e aproveite a melhor conexão!" />
+    <meta name="twitter:image" content="/assets/og-banner.jpg" />
+    <meta name="twitter:site" content="@BrisanetOficial" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon-D63nPy4Y.ico" />
+
+    <!-- Exemplo de meta para páginas internas (SPA: pode ser ajustado via React Helmet) -->
+    <!--
+    <meta name="description" content="Página de Combos Brisanet: escolha o melhor combo para sua casa e economize!" data-page="combos" />
+    <meta name="description" content="Planos empresariais Brisanet: soluções de internet para empresas de todos os portes." data-page="empresarial" />
+    <meta name="description" content="FAQ Brisanet: tire suas dúvidas sobre planos, instalação e atendimento." data-page="faq" />
+    -->
+    <script type="module" crossorigin src="/assets/main-BqQtvlfE.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-C-NNb0po.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    
+    <script>
+      (function() {
+        
+
+        const host = window.location.hostname;
+        const path = window.location.pathname;
+        
+
+        function removeSubpathFromUrl(url) {
+          if (typeof url === 'string' && url.includes('/brisanetplanos/')) {
+            return url.replace('/brisanetplanos/', '/');
+          }
+          return url;
+        }
+        
+
+        if (host === 'brisanetoferta.com.br' || host.includes('brisanetoferta')) {
+
+          if (path.startsWith('/brisanetplanos/')) {
+            window.location.replace(path.replace('/brisanetplanos', '') + window.location.hash + window.location.search);
+            return;
+          }
+          
+
+          const originalCreateElement = document.createElement;
+          document.createElement = function() {
+            const element = originalCreateElement.apply(document, arguments);
+            
+
+            if (arguments[0].toLowerCase() === 'script' || 
+                arguments[0].toLowerCase() === 'link' || 
+                arguments[0].toLowerCase() === 'img') {
+              
+              const originalSetAttribute = element.setAttribute;
+              element.setAttribute = function(name, value) {
+                if ((name === 'src' || name === 'href') && value) {
+                  value = removeSubpathFromUrl(value);
+                }
+                return originalSetAttribute.call(this, name, value);
+              };
+            }
+            
+            return element;
+          };
+        }
+        
+
+        function fixExistingUrls() {
+          document.querySelectorAll('[src], [href]').forEach(el => {
+            if (el.src) el.src = removeSubpathFromUrl(el.src);
+            if (el.href) el.href = removeSubpathFromUrl(el.href);
+          });
+        }
+        
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', fixExistingUrls);
+        } else {
+          fixExistingUrls();
+        }
+      })();
+    </script>
+  </body>
+</html>

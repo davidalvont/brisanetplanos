@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11127318292"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11127318292');
+      gtag('config', 'AW-11127318292/vdBLCIPQ0f0aEJTO9bkp', { 'phone_conversion_number': '0800 878 3344' }); // Page view
+      gtag('config', 'AW-11127318292/nkuHCPbr4f0aEJTO9bkp'); // Form submission
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas Brisanet | Admin</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="./favicon.ico" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // GitHub Pages or custom domain admin redirect
+      (function() {
+        // Detecta o ambiente de execução
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const isCustomDomain = window.location.hostname === 'brisanetoferta.com.br' || 
+                              window.location.hostname.includes('brisanetoferta');
+        
+        // Define o basePath com base no ambiente
+        let basePath = '';
+        
+        // Se estamos no GitHub Pages sem domínio personalizado, usa /brisanetplanos
+        if (isGitHubPages && !isCustomDomain) {
+          basePath = '/brisanetplanos';
+        }
+        
+        window.location.replace(`${basePath}/#/admin`);
+      })();
+    </script>
+  </body>
+</html>
