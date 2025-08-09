@@ -95,7 +95,28 @@
           const originalCreateElement = document.createElement;
           document.createElement = function() {
             const element = originalCreateElement.apply(document, arguments);
-            
+            element.setAttribute('data-basepath', '/brisanetplanos');
+            return element;
+          };
+        }
+
+
+        function fixExistingUrls() {
+          document.querySelectorAll('[src], [href]').forEach(el => {
+            if (el.src) el.src = removeSubpathFromUrl(el.src);
+            if (el.href) el.href = removeSubpathFromUrl(el.href);
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', fixExistingUrls);
+        } else {
+          fixExistingUrls();
+        }
+      })();
+    </script>
+  </body>
+</html>
 
             if (arguments[0].toLowerCase() === 'script' || 
                 arguments[0].toLowerCase() === 'link' || 

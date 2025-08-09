@@ -31,9 +31,9 @@
         // Define o basePath com base no ambiente
         let basePath = '';
         
-        // Se estamos no GitHub Pages sem domínio personalizado, usa /brisanetplanos
+        // Se estamos no GitHub Pages sem domínio personalizado, usa /brisanet
         if (isGitHubPages && !isCustomDomain) {
-          basePath = '/brisanetplanos';
+          basePath = '/brisanet';
         }
         
         window.location.replace(`${basePath}/#/admin`);

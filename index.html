@@ -62,7 +62,7 @@
     <meta name="description" content="Planos empresariais Brisanet: soluções de internet para empresas de todos os portes." data-page="empresarial" />
     <meta name="description" content="FAQ Brisanet: tire suas dúvidas sobre planos, instalação e atendimento." data-page="faq" />
     -->
-    <script type="module" crossorigin src="/assets/main-BxoIQQSY.js"></script>
+    <script type="module" crossorigin src="/assets/main-BIb4bWO5.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/main-DuzPt6Ts.css">
   </head>
 
@@ -96,7 +96,28 @@
           const originalCreateElement = document.createElement;
           document.createElement = function() {
             const element = originalCreateElement.apply(document, arguments);
-            
+            element.setAttribute('data-basepath', '/brisanetplanos');
+            return element;
+          };
+        }
+
+
+        function fixExistingUrls() {
+          document.querySelectorAll('[src], [href]').forEach(el => {
+            if (el.src) el.src = removeSubpathFromUrl(el.src);
+            if (el.href) el.href = removeSubpathFromUrl(el.href);
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', fixExistingUrls);
+        } else {
+          fixExistingUrls();
+        }
+      })();
+    </script>
+  </body>
+</html>
 
             if (arguments[0].toLowerCase() === 'script' || 
                 arguments[0].toLowerCase() === 'link' || 
