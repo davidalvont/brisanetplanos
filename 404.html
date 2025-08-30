@@ -8,31 +8,14 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-11127318292');
-      gtag('config', 'AW-11127318292/vdBLCIPQ0f0aEJTO9bkp', { 'phone_conversion_number': '0800 878 3344' }); // Page view
-      gtag('config', 'AW-11127318292/nkuHCPbr4f0aEJTO9bkp'); // Form submission
-      
-      // Definição das funções de conversão globais
-      // Função para registrar visualização de página
-      window.trackPageView = function() {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-11127318292/vdBLCIPQ0f0aEJTO9bkp'
-        });
-      };
-      
-      // Função para registrar envio de formulário
-      window.trackFormSubmission = function() {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-11127318292/nkuHCPbr4f0aEJTO9bkp',
-          'value': 1.0,
-          'currency': 'BRL'
-        });
-      };
+      gtag('config', 'AW-11127318292/Clj4CPLHtpAbENqet6BB', { 'phone__number': '0800 878 3344' }); // Page view
+      gtag('config', 'AW-11127318292/Clj4CPLHtpAbENqet6BB'); // Form submission
     </script>
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ofertas Brisanet | Internet Fibra Óptica, Combos e Planos Empresariais</title>
-    <meta name="description" content="Ofertas exclusivas Brisanet: internet fibra óptica, Brisanet combos, Brisanet planos: planos residenciais e empresariais e atendimento especializado. Contrate online e aproveite a melhor conexão!" />
+    <meta name="description" content="Ofertas exclusivas Brisanet: internet fibra óptica, combos, planos empresariais e atendimento especializado. Contrate online e aproveite a melhor conexão!" />
     <meta name="author" content="Brisanet" />
     <meta name="keywords" content="Brisanet, internet fibra óptica, planos de internet, combos, planos empresariais, ofertas, contratar internet, Ceará, Nordeste, banda larga, Wi-Fi grátis, instalação gratuita" />
     <meta name="robots" content="index, follow" />
@@ -40,7 +23,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Ofertas Brisanet | Internet Fibra Óptica, Combos e Planos Empresariais" />
-    <meta property="og:description" content="Ofertas exclusivas Brisanet: internet fibra óptica, Brisanet combos, Brisanet planos: planos residenciais e empresariais e atendimento especializado. Contrate online e aproveite a melhor conexão!" />
+    <meta property="og:description" content="Ofertas exclusivas Brisanet: internet fibra óptica, combos, planos empresariais e atendimento especializado. Contrate online e aproveite a melhor conexão!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.brisanetoferta.com.br/" />
     <meta property="og:image" content="/assets/og-banner.jpg" />
@@ -49,12 +32,12 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ofertas Brisanet | Internet Fibra Óptica, Combos e Planos Empresariais" />
-    <meta name="twitter:description" content="Ofertas exclusivas Brisanet: internet fibra óptica, Brisanet combos, Brisanet planos: planos residenciais e empresariais e atendimento especializado. Contrate online e aproveite a melhor conexão!" />
+    <meta name="twitter:description" content="Ofertas exclusivas Brisanet: internet fibra óptica, combos, planos empresariais e atendimento especializado." />
     <meta name="twitter:image" content="/assets/og-banner.jpg" />
     <meta name="twitter:site" content="@BrisanetOficial" />
 
     <!-- Favicon -->
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
 
     <!-- Exemplo de meta para páginas internas (SPA: pode ser ajustado via React Helmet) -->
     <!--
@@ -65,59 +48,71 @@
   </head>
 
   <body>
+    <!-- Subpáginas para SEO -->
+    <div id="planos" itemScope itemType="https://schema.org/WebPage" itemProp="mainEntity">
+      <meta itemProp="name" content="Planos de Internet | Ofertas Brisanet" />
+      <meta itemProp="description" content="Conheça os planos de internet fibra óptica Brisanet. Velocidade, estabilidade e Wi-Fi grátis para sua casa." />
+    </div>
+    <div id="combos" itemScope itemType="https://schema.org/WebPage" itemProp="mainEntity">
+      <meta itemProp="name" content="Combos | Ofertas Brisanet" />
+      <meta itemProp="description" content="Economize com os combos Brisanet: internet, TV e telefone em um só pacote. Veja as ofertas!" />
+    </div>
+    <div id="empresarial" itemScope itemType="https://schema.org/WebPage" itemProp="mainEntity">
+      <meta itemProp="name" content="Planos Empresariais | Ofertas Brisanet" />
+      <meta itemProp="description" content="Soluções de internet fibra óptica para empresas de todos os portes. Atendimento especializado Brisanet." />
+    </div>
+    <div id="contratar" itemScope itemType="https://schema.org/WebPage" itemProp="mainEntity">
+      <meta itemProp="name" content="Contratar | Ofertas Brisanet" />
+      <meta itemProp="description" content="Solicite orçamento ou contrate online os serviços Brisanet. Atendimento rápido e seguro." />
+    </div>
+    <div id="faq" itemScope itemType="https://schema.org/WebPage" itemProp="mainEntity">
+      <meta itemProp="name" content="FAQ | Ofertas Brisanet" />
+      <meta itemProp="description" content="Tire suas dúvidas sobre planos, instalação, cobertura e atendimento Brisanet." />
+    </div>
+
     <div id="root"></div>
     <script type="module" src="./src/main.tsx"></script>
-    
     <script>
+      // SPA redirection para GitHub Pages ou domínio personalizado
       (function() {
-        const host = window.location.hostname;
+        // Detecta o ambiente de execução
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const isCustomDomain = window.location.hostname === 'brisanetoferta.com.br' || 
+                              window.location.hostname.includes('brisanetoferta');
+        
         const path = window.location.pathname;
+        const hash = window.location.hash || '';
+        const search = window.location.search || '';
         
-        function removeSubpathFromUrl(url) {
-          if (typeof url === 'string' && url.includes('/brisanetplanos/')) {
-            return url.replace('/brisanetplanos/', '/');
-          }
-          return url;
+        // Define o basePath com base no ambiente
+        let basePath = '';
+        
+        // Se estamos no GitHub Pages sem domínio personalizado, usa /brisanet
+        if (isGitHubPages && !isCustomDomain) {
+          basePath = '/brisanet';
         }
         
-        if (host === 'brisanetoferta.com.br' || host.includes('brisanetoferta')) {
-          if (path.startsWith('/brisanetplanos/')) {
-            window.location.replace(path.replace('/brisanetplanos', '') + window.location.hash + window.location.search);
-            return;
-          }
-          
-          const originalCreateElement = document.createElement;
-          document.createElement = function() {
-            const element = originalCreateElement.apply(document, arguments);
-            
-            if (arguments[0].toLowerCase() === 'script' || 
-                arguments[0].toLowerCase() === 'link' || 
-                arguments[0].toLowerCase() === 'img') {
-              
-              const originalSetAttribute = element.setAttribute;
-              element.setAttribute = function(name, value) {
-                if ((name === 'src' || name === 'href') && value) {
-                  value = removeSubpathFromUrl(value);
-                }
-                return originalSetAttribute.call(this, name, value);
-              };
-            }
-            
-            return element;
-          };
+        // Caso 0: Domínio personalizado com /brisanetplanos/ no caminho (erro comum)
+        if (isCustomDomain && path.startsWith('/brisanetplanos/')) {
+          // Redireciona para a mesma URL sem o prefixo /brisanetplanos/
+          const newPath = path.replace('/brisanet', '');
+          window.location.replace(newPath + hash + search);
+          return;
         }
         
-        function fixExistingUrls() {
-          document.querySelectorAll('[src], [href]').forEach(el => {
-            if (el.src) el.src = removeSubpathFromUrl(el.src);
-            if (el.href) el.href = removeSubpathFromUrl(el.href);
-          });
+        // Caso 1: GitHub Pages - redirecionar URLs sem o basePath correto
+        if (isGitHubPages && !isCustomDomain && !path.startsWith(basePath)) {
+          window.location.replace(basePath + '/' + hash + search);
+          return;
         }
         
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', fixExistingUrls);
-        } else {
-          fixExistingUrls();
+        // Caso 2: Qualquer ambiente - URL que deveria ser um hash (SPA route)
+        // Ex: /faq deve virar /#/faq, ou /brisanetplanos/faq deve virar /brisanetplanos/#/faq
+        if (path !== '/' && path !== basePath && path !== basePath + '/') {
+          // Extrai a parte da rota após o basePath
+          const route = path.replace(basePath, '').replace(/^\//, '');
+          window.location.replace(basePath + '/#/' + route + search);
+          return;
         }
       })();
     </script>

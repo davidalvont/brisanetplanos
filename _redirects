@@ -1,1 +1,48 @@
-/* /index.html 200 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ofertas Brisanet - Redirecionando</title>
+    <script>
+      // Detectar o ambiente e configurar redirecionamentos
+      (function() {
+        // Pega o caminho completo e o hash da URL atual
+        const path = window.location.pathname;
+        const hash = window.location.hash;
+        const search = window.location.search;
+        
+        // Detecta domínio personalizado vs GitHub Pages
+        const isCustomDomain = window.location.hostname === 'brisanetoferta.com.br' || 
+                             window.location.hostname.includes('brisanetoferta');
+        
+        // GitHub Pages base path
+        const gitHubPagesPath = '/brisanetplanos';
+        
+        // Se estamos usando domínio personalizado mas a URL ainda contém o subpath /brisanetplanos/
+        if (isCustomDomain && path.startsWith(gitHubPagesPath + '/')) {
+          // Remover o /brisanetplanos/ e manter o resto do caminho
+          const newPath = path.replace(gitHubPagesPath, '');
+          window.location.replace(newPath + hash + search);
+          return;
+        }
+        
+        // No GitHub Pages, redirecionamos para a raiz do site com o caminho como hash route
+        if (!isCustomDomain && path !== '/' && !path.startsWith(gitHubPagesPath + '/')) {
+          window.location.replace(gitHubPagesPath + '/#' + path + search);
+          return;
+        }
+        
+        // Para qualquer outro caso, manda para a home com o hash
+        const pathNoBase = path.replace(gitHubPagesPath, '');
+        if (pathNoBase !== '/' && !hash) {
+          const basePath = isCustomDomain ? '' : gitHubPagesPath;
+          window.location.replace(basePath + '/#' + pathNoBase + search);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Redirecionando...</h1>
+    <p>Você será redirecionado para a página principal. Se não for redirecionado automaticamente, <a href="/">clique aqui</a>.</p>
+  </body>
+</html>
